@@ -1,0 +1,36 @@
+$colorPrimary: #3A63DE;
+$colorPrimaryHover: #3154BD;
+$menuIconColor: #C4D0F5;
+$menuIconColorHover: #FFFFFF;
+$notificationColor:#FD726B;
+$onlineColor:#44CB7F;
+$infoTextColor:#818386;
+$borderColor:#E1E3E5;
+$dateColor:#818387;
+@mixin notification {
+    max-width: 21px;
+    max-height: 21px;
+    padding: 3.5px 7px;
+    background-color: $notificationColor;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+}
+@mixin online {
+    background-color: $onlineColor;
+    padding: 1px;
+    max-width: 8px;
+    max-height: 8px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+@mixin border {
+    border: 1px solid $borderColor;
+}
+@mixin border-right {
+    border-right:  1px solid $borderColor;
+}
+@mixin border-bottom {
+    border-bottom:  1px solid $borderColor;
+    
+}

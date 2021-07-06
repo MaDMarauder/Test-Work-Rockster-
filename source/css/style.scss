@@ -1,0 +1,466 @@
+@import 'theme.scss';
+$mainFont:'Poppins',sans-serif;
+#container {
+   display: flex;
+   height: 1095px;
+}
+#content-box {
+    display: flex;
+    flex: 1;
+}
+#menu-left {
+    height: 1095px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 150px;
+    position: relative;
+    background-color: $colorPrimary;
+    overflow: auto;
+        a:first-child {
+            min-height: 112px;height: auto;
+        }
+            a:last-child {min-height: 106px;height: auto;}
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    text-decoration: none;
+                    height: 150px;
+                    align-self: stretch;
+                    position: relative;
+                    transition: all 1s ease;
+                    color: $menuIconColor;
+                    &:hover{background-color:$colorPrimaryHover;opacity: 1;transform: scale(1.2);}
+                    &:hover .notification{border-color: $colorPrimaryHover;}
+                    &:hover .menu-icon{fill: $menuIconColorHover;opacity: 1;transform: scale(1.2);}
+                    &:hover .menu-hide {fill: $menuIconColorHover;opacity: 1;transform: rotate(180deg)}
+                    &:hover p{color: $menuIconColorHover}
+                                        .menu-icon {fill: $menuIconColor;}
+                                            .menu-hide {fill: $menuIconColor;transition: all 0s ease;}
+                                                 p {
+                                                   position: absolute;
+                                                   bottom: 26px;
+                                                   font-family: $mainFont;
+                                                   font-size: 13px;
+                                                   font-weight: 400;
+                                                   opacity: 0.8;
+                                                   color: $menuIconColor;
+                                                                }
+                }           
+}
+#menu-left .notification {
+    @include notification;
+    position: absolute;
+    top: 42px;
+    right: 41px;
+    border: 4px solid $colorPrimary;
+}
+.invisible {
+    display: none!important;
+}
+#container .users {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    min-height: 380px;
+    overflow: auto;
+        .search-box{
+            display: flex;
+            min-height: 79px;
+            flex: 1;
+            justify-content: start;
+            align-items: center;
+            @include border-right;
+            @include border-bottom;
+            padding: 0 25px;
+            transition: transform 1s ease;
+                svg:hover{transform: scale(1.2);}
+                input{
+                    flex: 1;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    padding-left: 0 11px;
+                    font-family: $mainFont;
+                    font-size: 15px;
+                    line-height: 22.5px;
+                    font-weight: 400;
+                    color: $infoTextColor;
+                }
+        }
+            .team-people {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 25px 0 25px;
+                font-family: $mainFont;
+                height: 45px;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 22.5;
+                color: $infoTextColor;
+                position: relative;
+                @include border-right
+            }
+                .user-item {
+                    display: flex;
+                    height: 100px;
+                    padding: 25px;
+                    @include border-bottom;
+                    @include border-right;
+                    position: relative;
+                    .user-box{
+                        position: relative;
+                        .online {
+                        background-color: $onlineColor;
+                        padding: 4px;
+                        border-radius: 50%;
+                        position: absolute;
+                        right: 0px;
+                        bottom: 0px;
+                        border: 3px solid white;
+                        }
+                    }
+                    a{
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                    
+                            .text-info{
+                            display: flex;
+                            flex-direction: column;
+                            width: 208px;
+                            padding: 0 20px;
+                            }
+                                h3{
+                                    color: black;
+                                    font-family: $mainFont;
+                                    font-size: 15px;
+                                    font-weight: 400;
+                                    line-height: 22.5px;
+                                }
+                                    p{
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        color: $infoTextColor;
+                                    }
+                                        .msg-notification{
+                                            @include notification;
+                                            position: absolute;
+                                            bottom: 40px;
+                                            right: 10px;
+                                        }
+                    }    
+                }
+            }
+#container 
+    .messages {
+        flex: 1;
+        overflow: auto;
+        .user-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            @include border-bottom;
+            min-height: 79px;
+            .status-box {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                h3 {padding: 0 16px;user-select: none;}
+                    .online-msg {
+                        background-color: $onlineColor;
+                        padding: 4px;
+                        max-width: 8px;
+                        max-height: 8px;
+                        border: 2px solid white;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 43px;
+                        right: 111px;
+                    }
+                } 
+                    .status-tools {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        a { padding-left: 15px;
+                            text-decoration: none;
+                        }
+                            .dot{
+                                padding-bottom: 8px;
+                            }
+                    }
+        }
+.message-item-j {
+    display: flex;
+    flex-direction: row;
+    padding: 24px 22px;
+    justify-content: flex-start;
+    align-items: center;
+     a{text-decoration: none;}
+            p {
+                font-family: $mainFont;
+                font-weight: 400;
+                font-size: 15px;
+                color: white;
+                line-height: 22px;
+            }
+                .message-area-b {
+                    background-color: $colorPrimary;
+                    padding: 18px 20px;
+                    border-radius: 8px 8px 8px 1px;
+                }
+                .message-area-g {
+                    background-color: #EFF3FC;
+                    padding: 18px 20px;
+                    border-radius: 8px 8px 0 0;
+                        p {color: black;margin-bottom: 4px;}
+                        small {color: $colorPrimary; font-size: 15px; font-weight: 400; font-style: $mainFont;}
+                }
+                .dot-msg {
+                    line-height: 50px;
+                    padding-bottom: 20px;
+                }
+                .download {
+                    border-radius: 0px 0px 8px 1px;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 12px 20px;
+                }
+            svg {padding: 0 10px;}
+            }   
+}
+.message-item-c {
+    display: flex;
+    padding: 24px 22px;
+    justify-content: flex-end;
+    align-items: center;
+        .message-area-g {
+            background-color: #EFF3FC;
+            padding: 18px 20px;
+            border-radius: 8px 8px 1px 8px;
+        }
+        .dot-msg {
+            line-height: 50px;
+            padding-bottom: 20px;
+        }
+        img {padding: 0 8px;}
+        svg {padding: 0 10px;}
+        a {text-decoration: none;color: $colorPrimary;}
+        .box{
+            max-height: 48px;
+            min-height: 48px;
+            min-width: 48px;
+            max-width: 48px;
+            border-radius: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+}
+#ava {
+    line-height: 50px;
+}
+#area-box-b  {
+   display: flex;
+   flex-direction: column;
+    small {
+        align-self: flex-end;
+        padding: 4px 0;
+    }
+}
+#area-box-g  {
+    display: flex;
+    flex-direction: column;
+     small {
+         align-self: flex-start;
+         padding: 4px 0;
+     }
+ }
+.date {
+    display: flex;
+    align-items: center;
+    color: $dateColor;
+    font-family: $mainFont;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+    user-select: none;
+}
+.message-day {
+    display: flex;
+    padding: 20px 30px;
+    justify-content: center;
+    align-items: center;
+    p {
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: 400;
+        font-style: $mainFont;
+        color: $dateColor;
+        line-height: 22px;
+        user-select: none;
+    }
+    &::before,&::after{
+        content: '';
+        height: 1px;
+        background-color:$borderColor;
+        flex: 1;
+    }
+}
+.sending-box {
+    max-height: 75px;
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $borderColor;
+    padding: 3px 30px;
+    >div {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        svg {padding: 0 8px;}
+        a{text-decoration: none;}
+        input{
+            width: 500px;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding-left: 0 11px;
+            font-family: $mainFont;
+            font-size: 15px;
+            line-height: 22.5px;
+            font-weight: 400;
+            color: $infoTextColor;
+        }
+    }
+    .send-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 56px;
+        min-width: 56px;
+        max-height: 56px;
+        min-height: 56px;
+        background-color: $colorPrimary;
+    }
+}
+
+@media all and (max-width: 1150px){
+    #container {
+        display: block;
+        min-height: none;
+        width: auto;
+        overflow: hidden;
+        height: auto;
+        #content-box{
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+            .users {
+                width: auto;
+                flex: 1;
+                max-height: 150px;
+                border-bottom: 4px solid $colorPrimary;
+                .user-item {
+                 align-self: stretch;
+                 justify-content: stretch;
+                 width: auto;
+                 flex: 1;
+                    a{
+                        width: auto;
+                        flex: 1;
+                    }
+                }
+                .text-info {
+                    width: auto;
+                    flex: 1;
+                    font-size: 20px;
+                }
+            }
+            .messages {
+                width: auto;
+                flex: 1;
+            }
+    }
+    #menu-left{
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        height: 90px;
+        width: auto;
+        padding: 20px 20px 0 20px;
+        justify-content: space-around;
+        align-items: center;
+        overflow: hidden;
+        position: sticky;
+        #logo {
+            padding-top: 10px;
+        }
+        .notification {
+            top: -10px;
+            right: 15px;
+        }
+        a{
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            width: auto;
+            height: 90px;
+            justify-content: space-around;
+            align-items: stretch;
+            padding: 0 10px;
+            flex-wrap: nowrap;
+            p{
+                font-size: 10px;
+            }
+        }
+    }
+
+}
+@media all and (max-width: 600px) {
+    .sending-box{
+        input {
+            width: 200px!important;
+        }
+    }
+    #menu-left{
+        overflow-x: auto;
+        height: 80px;
+        a {
+            transform: scale(0.9);
+        }
+    }
+    #logo {
+        display: none;
+    }
+}
+@media all and (max-width: 480px) {
+    #menu-left{
+        height: 70px;
+    }
+}
+@media all and (max-width: 320px) {
+    .sending-box{
+        input {
+            width: 100px!important;
+        }
+    }
+    #menu-left{
+        .item {
+            display: none;
+        }
+        p{
+        font-size: 8px;
+        }
+    }
+}
